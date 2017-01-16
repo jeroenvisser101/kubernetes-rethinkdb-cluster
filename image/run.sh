@@ -16,6 +16,9 @@
 
 set -o pipefail
 
+TIME_TO_SLEEP=$(expr 10 \* $REPLICA_NUMBER)
+sleep ${TIME_TO_SLEEP:-0}
+
 POD_NAMESPACE=${POD_NAMESPACE:-default}
 RETHINK_CLUSTER=${RETHINK_CLUSTER:-"rethinkdb"}
 
